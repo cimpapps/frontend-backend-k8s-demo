@@ -1,0 +1,6 @@
+GET http://localhost:8084/hello
+Accept: text/plain
+
+###
+GET http://localhost:8084/hellobackend
+Accept: text/plain

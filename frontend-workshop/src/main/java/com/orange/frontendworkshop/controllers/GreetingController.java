@@ -15,8 +15,8 @@ public class GreetingController {
   @Value("${greeting}")
   private String greet;
 
-  @Value("${backend.host}")
-  private String backendHost;
+  @Value("${backend.url}")
+  private String backendUrl;
 
   private final RestTemplate restTemplate;
 
@@ -31,7 +31,7 @@ public class GreetingController {
 
   @GetMapping(value = "/hellobackend", produces = MediaType.TEXT_PLAIN_VALUE)
   public String greetBack() throws UnknownHostException {
-    return getHostGreet() + "\n \t" + restTemplate.getForObject(backendHost, String.class) +"\n";
+    return getHostGreet() + "\n \t" + restTemplate.getForObject(backendUrl, String.class) +"\n";
   }
 
   private String getHostGreet() throws UnknownHostException {

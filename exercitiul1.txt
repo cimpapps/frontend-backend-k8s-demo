@@ -1,0 +1,24 @@
+
+1. Sa se creeze cate un Dockerfile pentru aplicatia de BACKEND si FRONTEND
+
+- FROM Trebuie pornit de la o imagine de java 8 openJDK, gasiti imaginea pe dockerhub.
+
+- COPY Sa se copieze jarul rezultat din buildul de maven in imaginea de DOCKER.
+
+- ENTRYPOINT Sa se porneasca procesul java la pornirea containerului. "java -jar app.jar".
+
+
+2. Sa se construiasca imaginea de docker folosind "docker build".
+
+- cd backend-workshop, "docker build . -t docker.io/{{username-dockerhub}}/backend-workshop:{{tag}}"
+
+- cd frontend-workshop, "docker build . -t docker.io/{{username-dockerhub}}/frontend-workshop:{{tag}}"
+
+   * {{username-dockerhub}} este userul vostru pe dockerhub, iar {{tag}} este  un tag al versiunii imagini
+        In cazul meu ar arata asa  "docker build . -t docker.io/cimbonda/backend-workshop:v1"
+
+3. Sa se impinga imaginile de docker in repositoryul central:
+
+-  docker push docker.io/{{username-dockerhub}}/backend-workshop:{{tag}}
+
+-  docker push docker.io/{{username-dockerhub}}/frontend-workshop:{{tag}}

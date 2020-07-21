@@ -22,3 +22,10 @@
 -  docker push docker.io/{{username-dockerhub}}/backend-workshop:{{tag}}
 
 -  docker push docker.io/{{username-dockerhub}}/frontend-workshop:{{tag}}
+
+
+*** A se nota ca fisierul de Dockerfile este identic, cum putem folosi acelasi Dockerfile pentru ambele aplicatii?
+    Punem Dockerfile in root si cand specificam contextul la build spunem directorul proiectului
+    docker build backend-workshop -t docker.io/{{username-dockerhub}}/backend-workshop:{{tag}}
+    docker build frontend-workshop -t docker.io/{{username-dockerhub}}/frontend-workshop:{{tag}}
+    Dar sa nu faceti asta, sunt 2 proiecte diferite, ne dorim 2 Dockerfile-uri separate, cu timpul vor avea diferente.

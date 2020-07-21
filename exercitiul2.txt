@@ -1,0 +1,34 @@
+Avand cele 2 imagini ajuns pe docker hub, acum putem scrie manifestele pentru podurile aplicatiei noastre.
+
+Sa se scrie 2 manifeste frontend-pod.yaml si backend-pod.yaml care vor fi folosite la startul podurilor
+ frontend + backend
+
+1. Sa se tina cont de principalele elemente care sunt in rootul manifestului
+apiVersion
+kind
+metadata
+spec
+
+Va puteti ajuta de comanda
+
+"kubectl explain pods",
+"kubectl explain pods.metadata",
+"kubectl explain pods.metdata.labels"
+"kubectl explain pods.metdata.name"
+"kubectl explain pods.spec"
+"kubectl explain pods.spec.containers"
+"kubectl explain pods.spec.containers.name"
+"kubectl explain pods.spec.containers.image"
+"kubectl explain pods.spec.containers.ports"
+
+2. Aplicati manifestele pe clusterul local "kubectl apply -f {{numeFisierYaml}}"
+   - verificati ca podurile exista folosind "kubectl get pods" sau prescurtat "kubectl get po"
+
+   - verificati logurile unui pod "kubectl logs {{numePod}}"
+
+   - accesati de pe browserul local aplicatia folosind port forwording
+            "kubectl port-forward {{numePod}} {{portLocal}}:{{portContainer}}"
+
+   - interactionati cu podul. "kubectl exec -it {{numePod}} -- {{comanda dorita}}"
+
+3. Replicati manual podurile doar schimbandu-le numele in manifestele dorite la metadata.name, si reaplicati manifestele

@@ -31,4 +31,5 @@ Va puteti ajuta de comanda
 
    - interactionati cu podul. "kubectl exec -it {{numePod}} -- {{comanda dorita}}"
 
-3. Replicati manual podurile doar schimbandu-le numele in manifestele dorite la metadata.name, si reaplicati manifestele
+3. Replicati manual podurile cu copy paste in fisierele respective iar descrierea de poduri trebuie despartita de "---"
+   La podul duplicat schimbati numele.

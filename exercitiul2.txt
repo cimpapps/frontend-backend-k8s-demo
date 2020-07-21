@@ -31,3 +31,4 @@ Va puteti ajuta de comanda
             "kubectl port-forward {{numePod}} {{portLocal}}:{{portContainer}}"
 
    - interactionati cu podul. "kubectl exec -it {{numePod}} -- {{comanda dorita}}"
+

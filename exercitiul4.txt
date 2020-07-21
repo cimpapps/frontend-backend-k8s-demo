@@ -1,0 +1,18 @@
+Este timpul sa putem accesa aplicatia noastr fara port-forward sau din interiorul clusterului.
+Pentru asta ne vom folosi de servicii.
+
+1. Creati un service manifest pentru frontend, frontend-svc-np de tipul NodePort cu:
+    - nodePort: 32122, port: 8081, targetPort: {{portulContaineruluiFrontend}}
+    - selector care sa matchuiasca labelul podului frontend
+
+
+2. Creati un service manifest pentru backend, backend-svc-cip.yaml, de tipul ClusterIP,
+ deoarece nu avem nevoie sa fie accesat extern clusterului cu:
+    - port: 8082, targetPort: {{portulContaineruluiFrontend}}
+    - selector care sa matchuiasca labelul podului backendului
+
+3. Afisati serviciile. "kubectl get services" sau "kubectl get svc"
+
+4. Acesati aplicatia frontend din browser. atat pe endpointul "/hello", cat si pe endpointul "/hellobackend"
+
+5. Creati inca un service de tip LB pt frontend.

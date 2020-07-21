@@ -1,7 +1,6 @@
 1. Pornind de la exercitiul 2, acum vom face 2 manifeste separate, cele 2 containere vor trai in poduri separate.
 frontend-pod.yaml, backend-pod.yaml, fiecare manifest va contine doar cate un container, cel de frontend, respectiv backend.
 
-
 2. Aplicati fiecare manifest folosind kubectl apply -f {{numeFisierYaml}}
 
 3. Inspectati podurile, get pods, logs.
